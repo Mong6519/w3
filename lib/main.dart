@@ -58,10 +58,10 @@ class _MyHomePageState extends State<MyhomePage> {
           return ListView.builder(
             itemCount: users.length,
             itemBuilder: (context, index) {
-              final user = users[idex];
+              final user = users[index];
 
 
-                return ConstrainedBox(
+                return Container(
                   child: Row(
                     children: [
                       Image.network(user.avatar,width: 50,),
