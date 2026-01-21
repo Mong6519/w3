@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
 }
 
 
-class MyhomePage extends StatefulWidget{
-  const MyhomePage({super.key, required this.title});
+class MyHomePage extends StatefulWidget{
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
@@ -33,7 +33,7 @@ class MyhomePage extends StatefulWidget{
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyhomePage> {
+class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
