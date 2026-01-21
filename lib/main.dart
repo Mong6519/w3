@@ -18,14 +18,14 @@ class MyApp extends StatelessWidget {
      ),
      home: const MyHomePage(title:'Flutter Demo Home Page'),
    );
-    throw UnimplementedError();
+    // throw UnimplementedError();
   }
 
 }
 
 
-class MyhomePage extends StatefulWidget{
-  const MyhomePage({super.key, required this.title});
+class MyHomePage extends StatefulWidget{
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
@@ -33,7 +33,7 @@ class MyhomePage extends StatefulWidget{
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyhomePage> {
+class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,15 +58,18 @@ class _MyHomePageState extends State<MyhomePage> {
           return ListView.builder(
             itemCount: users.length,
             itemBuilder: (context, index) {
-              final user = users[idex];
+              final user = users[index];
 
 
-                return ConstrainedBox(
+                return Container(
                   child: Row(
                     children: [
                       Image.network(user.avatar,width: 50,),
                       SizedBox(width: 10,),
-                      Text(user.name)
+                      Text(user.name),
+                      // Text(user.age as String),
+                      Text(user.birthdate),
+                      Text(user.city),
                     ],
                   ),
                 );
