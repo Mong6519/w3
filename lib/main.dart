@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Image.network(user.avatar,width: 50,),
                       SizedBox(width: 10,),
                       Text(user.name),
-                      // Text(user.age as String),
+                      Text(user.age as String),
                       Text(user.birthdate),
                       Text(user.city),
                     ],
