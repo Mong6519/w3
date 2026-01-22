@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
      theme: ThemeData(
        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
      ),
-     home: const MyHomePage(title:'Flutter Demo Home Page'),
+     home: const MyHomePage(title:'Infomation '),
    );
     // throw UnimplementedError();
   }
@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
           }
 
           if (snapshot.hasError) {
-            return Center(child: Text("เกิดข้อผิดพลาด"));
+            return Center(child: Text(snapshot.error.toString()));
 
           }
           final users = snapshot.data!;
@@ -61,18 +61,35 @@ class _MyHomePageState extends State<MyHomePage> {
               final user = users[index];
 
 
-                return Container(
-                  child: Row(
-                    children: [
-                      Image.network(user.avatar,width: 50,),
-                      SizedBox(width: 10,),
-                      Text(user.name),
-                      Text(user.age as String),
-                      Text(user.birthdate),
-                      Text(user.city),
-                    ],
-                  ),
-                );
+              return Container(
+                padding: const EdgeInsets.all(8),
+                child: Row(
+                  children: [
+                    Image.network(user.avatar, width: 50),
+                    const SizedBox(width: 10),
+
+                    Expanded(
+                      child: Text(
+                        user.name,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+
+                    const SizedBox(width: 10),
+
+                    Expanded(
+                      child: Text(
+                        "อายุ ${user.age} | เกิด ${user.birthdate} | เมือง ${user.city}",
+                        maxLines: 3,
+                        softWrap: true,
+                      ),
+                    ),
+
+                  ],
+                ),
+              );
+
+
             },
 
           );
